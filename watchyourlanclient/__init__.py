@@ -5,7 +5,7 @@ from typing import Optional
 from cachetools import cached, TTLCache
 
 # Version
-__version__ = "2024.1007-alpha"
+__version__ = "2024.1008-alpha"
 
 # Set up basic logging configuration
 logging.basicConfig(level=logging.INFO)
