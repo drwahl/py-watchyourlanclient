@@ -18,6 +18,6 @@ setup(
     install_requires=[
         'bumpver',
         'cachetools>=5.5.0',
-        'httpx>=0.27.2',
+        'httpx>=0.27.0',
     ],
 )
