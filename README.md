@@ -1,4 +1,4 @@
-# py-watchyourlanclient
+# watchyourlanclient
 Python API client to interact with WatchYourLAN
 
 # Example usage

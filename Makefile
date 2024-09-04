@@ -32,4 +32,5 @@ dist: clean
 publish:
 	rm -rf dist/*
 	python -m build
-	twine upload -r testpypi dist/*
+	#twine upload -r testpypi dist/*
+	twine upload dist/*
