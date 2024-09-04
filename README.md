@@ -3,8 +3,10 @@ Python API client to interact with WatchYourLAN
 
 # Example usage
 ```python
+from watchyourlanclient import WatchYourLANClient
+
 async def main_async():
-    api_client = WatchYourLANAPI(base_url="http://localhost:8840", async_mode=True)
+    api_client = WatchYourLANClient(base_url="http://localhost:8840", async_mode=True)
 
     try:
         # Get all hosts
@@ -23,7 +25,7 @@ async def main_async():
         await api_client.close()
 
 def main_sync():
-    api_client = WatchYourLANAPI(base_url="http://localhost:8840", async_mode=False)
+    api_client = WatchYourLANClient(base_url="http://localhost:8840", async_mode=False)
 
     try:
         # Get all hosts

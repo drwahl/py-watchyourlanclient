@@ -3,7 +3,7 @@ import httpx
 from httpx import MockTransport
 import asyncio
 # Adjust import path based on your project structure
-from watchyourlanclient import WatchYourLANAPI
+from watchyourlanclient import WatchYourLANClient
 
 
 @pytest.fixture
@@ -39,7 +39,7 @@ def test_get_all_hosts_sync(mock_transport):
     """
     Test fetching all hosts in synchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=False)
     api_client.client = httpx.Client(
         transport=mock_transport, base_url="http://localhost:8840")
@@ -54,7 +54,7 @@ def test_get_host_by_id_sync(mock_transport):
     """
     Test fetching a host by ID in synchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=False)
     api_client.client = httpx.Client(
         transport=mock_transport, base_url="http://localhost:8840")
@@ -69,7 +69,7 @@ def test_delete_host_sync(mock_transport):
     """
     Test deleting a host in synchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=False)
     api_client.client = httpx.Client(
         transport=mock_transport, base_url="http://localhost:8840")
@@ -86,7 +86,7 @@ async def test_get_all_hosts_async(mock_transport):
     """
     Test fetching all hosts in asynchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=True)
     api_client.client = httpx.AsyncClient(
         transport=mock_transport, base_url="http://localhost:8840")
@@ -102,7 +102,7 @@ async def test_get_host_by_id_async(mock_transport):
     """
     Test fetching a host by ID in asynchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=True)
     api_client.client = httpx.AsyncClient(
         transport=mock_transport, base_url="http://localhost:8840")
@@ -118,7 +118,7 @@ async def test_delete_host_async(mock_transport):
     """
     Test deleting a host in asynchronous mode.
     """
-    api_client = WatchYourLANAPI(
+    api_client = WatchYourLANClient(
         base_url="http://localhost:8840", async_mode=True)
     api_client.client = httpx.AsyncClient(
         transport=mock_transport, base_url="http://localhost:8840")

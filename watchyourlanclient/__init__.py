@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 cache = TTLCache(maxsize=100, ttl=300)
 
 
-class WatchYourLANAPI:
+class WatchYourLANClient:
     def __init__(self, base_url: str = "http://localhost:8840", async_mode: bool = True, verify_ssl: bool = True,
                  timeout: float = 10.0, headers: Optional[dict] = None, retries: int = 3):
         """
