@@ -16,6 +16,7 @@ setup(
     # package_data={'watchyourlanclient': ['templates/*']},
     include_package_data=True,
     install_requires=[
+        'cachetools',
         'httpx',
     ],
 )
