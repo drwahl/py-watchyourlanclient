@@ -16,6 +16,7 @@ setup(
     # package_data={'watchyourlanclient': ['templates/*']},
     include_package_data=True,
     install_requires=[
+        'bumpver',
         'cachetools>=5.5.0',
         'httpx>=0.27.2',
     ],
