@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "watchyourlanclient"
-version = "2024.1003-alpha"
+version = "2024.1004-alpha"
 description = "Python client to talk to WatchYourLAN APIs"
 readme = "README.md"
 authors = [{ name = "David Wahlstrom", email = "david.wahlstrom@gmail.com" }]
@@ -30,7 +30,7 @@ dev = ["pip-tools", "pytest", "autopep8", "ipdb", "pytest", "pytest-asyncio", "b
 Homepage = "https://github.com/drwahl/py-watchyourlanclient"
 
 [tool.bumpver]
-current_version = "2024.1003-alpha"
+current_version = "2024.1004-alpha"
 version_pattern = "YYYY.BUILD[-TAG]"
 commit_message = "bump version {old_version} -> {new_version}"
 tag_message = "{new_version}"
