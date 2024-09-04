@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='watchyourlanclient',
-    version='0.1.0',
+    version='2024.1001-alpha',
     description='Python client to talk to WatchYourLAN APIs',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
