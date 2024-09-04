@@ -30,5 +30,6 @@ dist: clean
 	python setup.py bdist_wheel
 
 publish:
+	rm -rf dist/*
 	python -m build
 	twine upload -r testpypi dist/*
