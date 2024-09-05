@@ -17,7 +17,7 @@ cache = TTLCache(maxsize=100, ttl=300)
 
 class WatchYourLANClient:
     def __init__(self, base_url: str = "http://localhost:8840", async_mode: bool = True, verify_ssl: bool = True,
-                 timeout: float = 10.0, headers: Optional[dict] = None, retries: int = 3):
+                 timeout: float = 10.0, headers: Optional[dict] = {}, retries: int = 3):
         """
         Initializes the API client.
 
@@ -33,20 +33,18 @@ class WatchYourLANClient:
         self.verify_ssl = verify_ssl
         self.timeout = timeout
         self.retries = retries
-
-        default_headers = {
-            "User-Agent": "WatchYourLANAPI/1.0",
+        # Add on default headers
+        self.headers = dict({
+            "User-Agent": "WatchYourLANClient/1.0",
             "Accept": "application/json",
-        }
-        if headers:
-            default_headers.update(headers)
+        }, **headers)
 
         if self.async_mode:
             self.client = httpx.AsyncClient(
-                base_url=self.base_url, verify=self.verify_ssl, timeout=self.timeout, headers=default_headers)
+                base_url=self.base_url, verify=self.verify_ssl, timeout=self.timeout, headers=self.headers)
         else:
             self.client = httpx.Client(
-                base_url=self.base_url, verify=self.verify_ssl, timeout=self.timeout, headers=default_headers)
+                base_url=self.base_url, verify=self.verify_ssl, timeout=self.timeout, headers=self.headers)
 
     async def close(self):
         """ Close the client connection for async mode. """
@@ -67,8 +65,7 @@ class WatchYourLANClient:
         Helper method to perform HTTP requests.
         Handles both async and sync modes with retry logic and error handling.
         """
-        if retries is None:
-            retries = self.retries
+        retries = retries or self.retries
 
         attempts = 0
         while attempts < retries:
